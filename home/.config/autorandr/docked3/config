@@ -10,13 +10,13 @@ output DisplayPort-4
 crtc 1
 mode 2560x1440
 pos 2560x0
-rate 59.95
+rate 75
 rotate right
 output DisplayPort-3
 crtc 2
 mode 2560x1440
 pos 0x611
-rate 59.95
+rate 75
 output eDP
 crtc 0
 mode 1920x1080

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if pgrep i3 >/dev/null; then
+    sleep 2
+    i3-msg restart
+fi
+

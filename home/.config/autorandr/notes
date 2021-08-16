@@ -1,3 +1,7 @@
 Note at home setup, for some reason the external displays are sometimes detected as
 DisplayPort-3 and 4, other times DisplayPort-5 and 6, which is why we have two
 'docked' profies saved.
+
+Troubleshooting:
+- problems w/ detection, see if https://github.com/phillipberndt/autorandr/issues/83
+  offers any help;
