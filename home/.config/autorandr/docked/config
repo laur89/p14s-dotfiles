@@ -6,13 +6,13 @@ output DisplayPort-1
 off
 output DisplayPort-2
 off
-output DisplayPort-3
+output DisplayPort-4
 crtc 1
 mode 2560x1440
 pos 2560x0
 rate 75
 rotate right
-output DisplayPort-4
+output DisplayPort-3
 crtc 2
 mode 2560x1440
 pos 0x136
