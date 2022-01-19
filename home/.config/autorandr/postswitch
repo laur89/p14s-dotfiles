@@ -5,3 +5,9 @@ if pgrep i3 >/dev/null; then
     i3-msg restart
 fi
 
+# work around https://github.com/hluk/CopyQ/issues/1595
+if pgrep copyq >/dev/null; then
+    killall copyq
+    sleep 2
+    copyq &
+fi
