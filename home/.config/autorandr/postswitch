@@ -1,13 +1,23 @@
 #!/usr/bin/env bash
 
+restart_copyq() {
+    killall copyq
+    #sleep 2
+    copyq &
+    disown
+}
+
 if pgrep i3 >/dev/null; then
     sleep 2
     i3-msg restart
 fi
 
+sleep 1
+
 # work around https://github.com/hluk/CopyQ/issues/1595
 if pgrep copyq >/dev/null; then
-    killall copyq
-    sleep 2
-    copyq &
+    restart_copyq &
+    disown
 fi
+
+exit 0
