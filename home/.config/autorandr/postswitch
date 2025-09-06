@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source /etc/.global-bash-init; _init || exit 1  # needs to be very first for the env vars
+source /etc/.global-bash-init || exit 1  # needs to be very first for the env vars
 
 restart_copyq() {
     killall copyq && sleep 0.5  # important to sleep; otherwise immediately re-starting copyq it states server's already running.
