@@ -11,12 +11,10 @@ off
 output DisplayPort-5
 off
 output DisplayPort-1
-crtc 1
 mode 3840x2160
 pos 0x0
 rate 60.00
 output eDP
-crtc 0
 mode 1920x1080
 pos 0x2160
 primary

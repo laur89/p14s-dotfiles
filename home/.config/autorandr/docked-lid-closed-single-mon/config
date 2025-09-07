@@ -13,7 +13,6 @@ off
 output DisplayPort-5
 off
 output DisplayPort-4
-crtc 0
 mode 2560x1440
 pos 0x0
 primary

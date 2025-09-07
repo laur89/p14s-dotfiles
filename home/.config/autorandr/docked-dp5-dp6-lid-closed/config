@@ -13,7 +13,6 @@ off
 output DisplayPort-4
 off
 output DisplayPort-6
-crtc 2
 mode 2560x1440
 pos 2560x0
 rate 75
@@ -26,7 +25,6 @@ x-prop-underscan off
 x-prop-underscan_hborder 0
 x-prop-underscan_vborder 0
 output DisplayPort-5
-crtc 0
 mode 2560x1440
 pos 0x466
 primary
