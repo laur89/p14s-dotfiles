@@ -3,5 +3,5 @@
 # as per readme @ https://github.com/phillipberndt/autorandr :
 #   > If you experience issues with xrandr being executed too early after connecting
 #   > a new monitor, then you can use a predetect script to delay the execution
-#sleep 1
+sleep 1
 
