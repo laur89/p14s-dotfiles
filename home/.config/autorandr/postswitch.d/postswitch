@@ -10,7 +10,8 @@ restart_copyq() {
 if pgrep --exact i3 >/dev/null; then
     #sleep 0.5
     "$HOME/.config/i3/scripts/refresh-settings.sh"
-    i3-msg restart >/dev/null
+    i3-msg -q restart
+    i3-move-workspaces.sh
 fi
 
 #sleep 1
