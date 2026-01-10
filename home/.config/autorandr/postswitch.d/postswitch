@@ -3,24 +3,24 @@
 source /etc/.global-bash-init || exit 1  # needs to be very first for the env vars
 
 restart_copyq() {
-    killall copyq && sleep 0.5  # important to sleep; otherwise immediately re-starting copyq it states server's already running.
-    silent_background  copyq
+    systemctl --user restart copyq.service
+
+    # or this if not using systemd service:
+    #killall copyq && sleep 0.5  # important to sleep; otherwise immediately re-starting copyq it states server's already running.
+    #silent_background  copyq
 }
 
-pgrep --exact bctld >/dev/null && bctl init
+# note bctl init _might_ also be executed from display-switch.ini's on_usb_connect_execute
+pgrep --exact bctld >/dev/null && bctl init --retry 2 --sleep 1
 
 if pgrep --exact i3 >/dev/null; then
-    #sleep 0.5
     "$HOME/.config/i3/scripts/i3-refresh-settings.sh"
     i3-msg -q restart
     i3-apply-rules.sh
 fi
 
 #sleep 1
-# work around https://github.com/hluk/CopyQ/issues/1595
-# note: best not do this as-is, as copyq is now likely running as a systemd service.
-#if pgrep copyq >/dev/null; then
-    #restart_copyq
-#fi
+# workaround for https://github.com/hluk/CopyQ/issues/1595
+#pgrep copyq >/dev/null && restart_copyq
 
 exit 0
