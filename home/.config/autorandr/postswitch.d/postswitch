@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+REFRESH_SETTINGS="$HOME/.config/i3/scripts/i3-refresh-settings.sh"
+
 source /etc/.global-bash-init || exit 1  # needs to be very first for the env vars
 
 restart_copyq() {
@@ -14,9 +16,10 @@ restart_copyq() {
 pgrep --exact bctld >/dev/null && bctl init --retry 2 --sleep 1
 
 if pgrep --exact i3 >/dev/null; then
-    "$HOME/.config/i3/scripts/i3-refresh-settings.sh"
+    check_progs_installed  "$REFRESH_SETTINGS" i3-apply-rules.sh
+    "$REFRESH_SETTINGS"
     i3-msg -q restart
-    i3-apply-rules.sh
+    sleep 0.5 && i3-apply-rules.sh
 fi
 
 #sleep 1
