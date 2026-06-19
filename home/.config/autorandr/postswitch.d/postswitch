@@ -13,7 +13,8 @@ restart_copyq() {
 }
 
 # note bctl init _might_ also be executed from display-switch.ini's on_usb_connect_execute
-pgrep --exact bctld >/dev/null && bctl init --retry 2 --sleep 1
+#pgrep --exact bctld >/dev/null && bctl init --retry 2 --sleep 1
+init-monitor.sh -r 2 -s 1
 
 if pgrep --exact i3 >/dev/null; then
     check_progs_installed  "$REFRESH_SETTINGS" i3-apply-rules.sh
